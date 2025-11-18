@@ -53,9 +53,11 @@ class TaskManager:
         task = self.get_task(task_id)
 
         if title is not None:
-            if title == "":
+        # título deve ser string e não pode ser vazio ou só espaços
+            if not isinstance(title, str) or not title.strip():
                 raise InvalidTaskError("Título inválido.")
             task.title = title
+
         
         if description is not None:
             task.description = description
