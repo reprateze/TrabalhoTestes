@@ -33,14 +33,14 @@ class TaskManager:
     # ----- OBTER -----
     def get_task(self, task_id: str) -> Task:
         if task_id not in self.tasks:
-            raise TaskNotFoundError("Tarefa não encontrada.")
+            raise TaskNotFoundError("Tarefa não localizada.")
         return self.tasks[task_id]
 
 
     # ----- REMOVER -----
     def remove_task(self, task_id: str):
         if task_id not in self.tasks:
-            raise TaskNotFoundError("Tarefa não encontrada.")
+            raise TaskNotFoundError("Tarefa não localizada.")
         del self.tasks[task_id]
 
     # ----- MARCAR COMO CONCLUÍDA -----
